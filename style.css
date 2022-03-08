@@ -1,0 +1,33 @@
+body {
+    background-color: beige;
+}
+
+.button {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    width: 150px;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+#header {
+    text-align: center;
+    font-size: 36px;
+    font-family: fantasy;
+}
+
+
+#blackboard {
+    border: 1px solid black;
+    background-color: #f4f4f4;
+    width: 640px;
+    height: 640px;
+    margin: auto;
+}
+
+#main {
+    display:block;
+    text-align: center;
+}
