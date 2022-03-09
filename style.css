@@ -26,6 +26,11 @@ body {
     height: 640px;
     margin: auto;
     overflow:hidden;
+    display: inline-grid;
+}
+
+.grid {
+    /* border:1px solid black */
 }
 
 #main {

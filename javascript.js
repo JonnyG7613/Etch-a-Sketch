@@ -5,28 +5,20 @@ const blackboard = document.getElementById('blackboard');
 
 // adjusts the size of the cells in the backboard
 function blackboardSize(xSize, ySize) {
-    let y = 1;
-    for (y = 1; y <= 16; y++) {
-        let x = 1;
-        let g = document.createElement('div');
-        g.setAttribute('display', 'block');
-        g.setAttribute("class", `ydiv${y} xdiv${x}`);
-        g.setAttribute('width', `${640 / xSize}px`);
-        g.setAttribute('height', `${640 / ySize}px`);
-        g.setAttribute('border', '1px solid black');
-        blackboard.appendChild(g);
-        for (x = 2; x <= 16; x++) {
-            g = document.createElement('div');
-            g.setAttribute('display', 'inlineBlock');
-            g.setAttribute('class', `ydiv${y} xdiv${x}`);
-            g.setAttribute('width', `${640 / xSize}px`);
-            g.setAttribute('height', `${640 / ySize}px`);
-            g.setAttribute('border', '1px solid black');
+    let columns = "auto";
+    for (let i = 1; i < xSize; i++) {
+        columns = (`${columns} auto`);
+    }
+    blackboard.setAttribute('gridTemplateColumns', columns);
+    blackboard.setAttribute('gridTemplateRows', columns);
+    for (y = 1; y <= ySize; y++) {
+        for (x = 1; x <= xSize; x++) {
+            let g = document.createElement('div');
+            g.setAttribute('class', 'grid');
             blackboard.appendChild(g);
         }
     }
 }
-
 // Erases everything on the backboard and returns all cells to #f4f4f4
 function clearBackboard() {
 
