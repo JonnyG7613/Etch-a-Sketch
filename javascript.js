@@ -22,7 +22,6 @@ function blackboardSize(xSize, ySize) {
             g.setAttribute('width', `${640 / xSize}px`);
             g.setAttribute('height', `${640 / ySize}px`);
             g.setAttribute('border', '1px solid black');
-            g.setAttribute('background', 'black');
             blackboard.appendChild(g);
         }
     }
