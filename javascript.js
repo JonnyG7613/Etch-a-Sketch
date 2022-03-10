@@ -1,26 +1,33 @@
 const blackButton = document.getElementById('blackButton');
 const randomButton = document.getElementById('randomButton');
 const clearButton = document.getElementById('clearButton');
+const buttons = document.getElementsByClassName('buttons');
 const blackboard = document.getElementById('blackboard');
+const grid = document.getElementsByClassName('grid');
+const sideSize = 16;
 
 // adjusts the size of the cells in the backboard
-function blackboardSize(xSize, ySize) {
+function blackboardSize(xSize) {
     let columns = "auto";
     for (let i = 1; i < xSize; i++) {
         columns = (`${columns} auto`);
     }
-    blackboard.setAttribute('gridTemplateColumns', columns);
-    blackboard.setAttribute('gridTemplateRows', columns);
-    for (y = 1; y <= ySize; y++) {
-        for (x = 1; x <= xSize; x++) {
+    blackboard.style.gridTemplateColumns = columns;
+    for (let y = 1; y <= xSize; y++) {
+        for (let x = 1; x <= xSize; x++) {
             let g = document.createElement('div');
             g.setAttribute('class', 'grid');
             blackboard.appendChild(g);
+            console.log(1);
         }
     }
 }
 // Erases everything on the backboard and returns all cells to #f4f4f4
-function clearBackboard() {
+function clearBlackboard(xSize) {
+    for (let i = 0; i < xSize ** 2; i++) {
+        grid[i].style.background = 'f4f4f4';
+        console.log(2);
+    }
 
 }
 
@@ -34,4 +41,13 @@ function hoverOver() {
 
 }
 
-blackboardSize(16, 16);
+blackboardSize(sideSize);
+
+blackButton.onclick = () => {
+    for (let a = 0; a < sideSize ** 2; a++) {
+        grid[a].style.background = 'black';
+    }
+}
+
+clearButton.onclick = clearBlackboard(sideSize);
+
