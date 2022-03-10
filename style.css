@@ -29,9 +29,13 @@ body {
     display: inline-grid;
 }
 
-.grid {
-    border:1px solid black
+.colorClass {
+    background-color:;
 }
+
+/* .grid {
+    border:1px solid black
+} */
 
 #main {
     display:block;

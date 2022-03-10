@@ -4,7 +4,11 @@ const clearButton = document.getElementById('clearButton');
 const buttons = document.getElementsByClassName('buttons');
 const blackboard = document.getElementById('blackboard');
 const grid = document.getElementsByClassName('grid');
-const sideSize = 16;
+let slider = document.getElementById('myRange');
+const sideSize = slider.getAttribute('value');
+
+
+const colorClass = document.getElementsByClassName('colorClass');
 
 // adjusts the size of the cells in the backboard
 function blackboardSize(xSize) {
@@ -16,38 +20,35 @@ function blackboardSize(xSize) {
     for (let y = 1; y <= xSize; y++) {
         for (let x = 1; x <= xSize; x++) {
             let g = document.createElement('div');
-            g.setAttribute('class', 'grid');
+            g.setAttribute('class', 'grid colorClass');
             blackboard.appendChild(g);
             console.log(1);
         }
     }
 }
-// Erases everything on the backboard and returns all cells to #f4f4f4
-function clearBlackboard(xSize) {
-    for (let i = 0; i < xSize ** 2; i++) {
-        grid[i].style.background = 'f4f4f4';
-        console.log(2);
-    }
 
-}
-
-// Sets the color to be used for the etch-a-sketch
-function etchColor(color) {
-
-}
-
-// When hovered over, sets the etch-a-sketch cell to the color
-function hoverOver() {
-
-}
 
 blackboardSize(sideSize);
 
-blackButton.onclick = () => {
-    for (let a = 0; a < sideSize ** 2; a++) {
-        grid[a].style.background = 'black';
+clearButton.onclick = function () {
+    for (let i = 0; i < colorClass.length; i++) {
+        colorClass[i].style.background = '#f4f4f4';
     }
 }
 
-clearButton.onclick = clearBlackboard(sideSize);
+blackButton.onclick = function () {
+    for (let i = 0; i < colorClass.length; i++) {
+        colorClass[i].addEventListener('mouseover', e => e.target.style.background = 'black');
+    }
 
+}
+
+randomButton.onclick = function () {
+    for (let i = 0; i < colorClass.length; i++) {
+        let red = parseInt(Math.random() * 256);
+        let green = parseInt(Math.random() * 256);
+        let blue = parseInt(Math.random() * 256);
+        colorClass[i].addEventListener('mouseover', e => e.target.style.background = `rgba(${red}, ${green}, ${blue}, 1)`);
+    }
+
+}
