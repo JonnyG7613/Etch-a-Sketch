@@ -18,4 +18,6 @@ The last is the clear grid button, which erases all colors and puts the board ba
 
 1.3: Added footer with copyright and link to my github.
 
+1.3.1: Changed the color of the buttons from grey to whitesmoke.
+
 Copyright - Jon Giarla, 2022
