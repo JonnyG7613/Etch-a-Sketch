@@ -66,12 +66,15 @@ blackButton.onclick = function () {
 // sets the color of the Etch-a-Sketch to random colors per square
 randomButton.onclick = function () {
     for (let i = 0; i < colorClass.length; i++) {
-        let red = parseInt(Math.random() * 256);
-        let green = parseInt(Math.random() * 256);
-        let blue = parseInt(Math.random() * 256);
-        colorClass[i].addEventListener('mouseover', e => e.target.style.background = `rgba(${red}, ${green}, ${blue}, ${Math.random()})`);
+        if (i % 10 == 0) {
+            colorClass[i].addEventListener('mouseover', e => e.target.style.background = `rgba(0, 0, 0, 1.0)`);
+        } else {
+            let red = parseInt(Math.random() * 256);
+            let green = parseInt(Math.random() * 256);
+            let blue = parseInt(Math.random() * 256);
+            colorClass[i].addEventListener('mouseover', e => e.target.style.background = `rgba(${red}, ${green}, ${blue}, ${Math.random()})`);
+        }
     }
-
 }
 
 $16.onclick = function () {
