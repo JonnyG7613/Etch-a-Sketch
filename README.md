@@ -14,4 +14,8 @@ The last is the clear grid button, which erases all colors and puts the board ba
 
 1.1: Added a border to emulate an Etch-a-Sketch, removed the set the size button, and added flair to the buttons. Also changed the color of the backboard.
 
+1.2: Removed the slider and added buttons for sizes 16x16, 32x32 and 64x64.
+
+1.3: Added footer with copyright and link to my github.
+
 Copyright - Jon Giarla, 2022

@@ -22,7 +22,7 @@ body {
 }
 
 #header {
-    color: white;
+    color: rgb(228, 228, 102);
     text-align: center;
     font-size: 48px;
     font-weight:bolder;
@@ -35,6 +35,18 @@ body {
     border-top-right-radius: 100px;
 }
 
+#footer {
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 40px;
+    font-size: large;
+    text-align: center;
+    color: black;
+}
+
+#footer img {
+    width: 15px;
+    height: 15px;
+}
 
 #blackboard {
     /* border-radius: 10%; */
@@ -53,15 +65,16 @@ body {
     margin: auto;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
+    position: relative;
 }
 
 .colorClass {
     background-color: #b6b4b4;
 }
 
-/* .grid {
-    border:1px solid black
-} */
+.grid {
+    border:.5px dotted rgb(184, 184, 184)
+}
 
 #main {
     display:block;
@@ -70,24 +83,37 @@ body {
 
 #clearButton {
     position: absolute;
-    bottom: 100px;
-    right: 100px;
+    bottom: 30px;
+    right: 38px;
 }
 
 #blackButton {
     position: absolute;
-    bottom: 100px;
-    left: 100px;
+    bottom: 30px;
+    left: 38px;
 }
 
 #randomButton {
     position: absolute;
-    bottom: 100px;
-    left: 225px;
+    bottom: 30px;
+    left: 161px;
 }
 
-.slideContainer {
+#size16 {
     position: absolute;
-    bottom: 70px;
-    right: 225px;
+    bottom: 30px;
+    left: 284px;
 }
+
+#size32 {
+    position: absolute;
+    bottom: 30px;
+    left: 407px;
+}
+
+#size64 {
+    position: absolute;
+    bottom: 30px;
+    left: 530px;
+}
+

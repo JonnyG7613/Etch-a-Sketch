@@ -2,14 +2,17 @@ const body = document.querySelector('body');
 const blackButton = document.getElementById('blackButton');
 const randomButton = document.getElementById('randomButton');
 const clearButton = document.getElementById('clearButton');
+const $16 = document.getElementById('size16');
+const $32 = document.getElementById('size32');
+const $64 = document.getElementById('size64');
 const buttons = document.getElementsByClassName('buttons');
 const blackboard = document.getElementById('blackboard');
 const grid = document.getElementsByClassName('grid');
-const setSize = document.getElementById('setSize');
-const slider = document.getElementById('myRange');
-let sideSize = slider.getAttribute('value');
+// const setSize = document.getElementById('setSize');
+// const slider = document.getElementById('myRange');
+// let sideSize = slider.getAttribute('value');
 const colorClass = document.getElementsByClassName('colorClass');
-const slideContainer = document.querySelector('.slideContainer');
+// const slideContainer = document.querySelector('.slideContainer');
 let span = document.createElement('span');
 
 // adjusts the size of the cells in the backboard
@@ -32,18 +35,18 @@ function blackboardSize(xSize) {
 }
 
 //default display of slider
-span.innerHTML = `<h2>${sideSize} x ${sideSize}</h2>`;
+// span.innerHTML = `<h2>${sideSize} x ${sideSize}</h2>`;
 
 // displays the slider dimensions as it's slid
-slider.oninput = function () {
-    let size = slider.value;
-    span.innerHTML = `<h2>${size} x ${size}</h2>`;
-    blackboardSize(size);
-}
+// slider.oninput = function () {
+//     let size = slider.value;
+//     span.innerHTML = `<h2>${size} x ${size}</h2>`;
+//     blackboardSize(size);
+// }
 
 // Sets default board size and displays board size
-slideContainer.appendChild(span);
-blackboardSize(sideSize);
+// slideContainer.appendChild(span);
+blackboardSize(16);
 
 // when clicked, clears the board of all colors and returns it to a white background
 clearButton.onclick = function () {
@@ -69,4 +72,14 @@ randomButton.onclick = function () {
         colorClass[i].addEventListener('mouseover', e => e.target.style.background = `rgba(${red}, ${green}, ${blue}, ${Math.random()})`);
     }
 
+}
+
+$16.onclick = function () {
+    blackboardSize(16);
+}
+$32.onclick = function () {
+    blackboardSize(32);
+}
+$64.onclick = function () {
+    blackboardSize(64);
 }
