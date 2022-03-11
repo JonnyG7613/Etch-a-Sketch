@@ -10,4 +10,8 @@ The third is random colors, which randomly colors the squares that are hovered o
 
 The last is the clear grid button, which erases all colors and puts the board back into the uncolored state.
 
+1.0: Basic blackboard with four buttons (black, clear, random, set the size);
+
+1.1: Added a border to emulate an Etch-a-Sketch, removed the set the size button, and added flair to the buttons. Also changed the color of the backboard.
+
 Copyright - Jon Giarla, 2022

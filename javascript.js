@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const blackButton = document.getElementById('blackButton');
 const randomButton = document.getElementById('randomButton');
 const clearButton = document.getElementById('clearButton');
@@ -37,23 +38,17 @@ span.innerHTML = `<h2>${sideSize} x ${sideSize}</h2>`;
 slider.oninput = function () {
     let size = slider.value;
     span.innerHTML = `<h2>${size} x ${size}</h2>`;
+    blackboardSize(size);
 }
 
 // Sets default board size and displays board size
 slideContainer.appendChild(span);
 blackboardSize(sideSize);
 
-// when clicked, sets the board to the size acording to the slider
-setSize.onclick = function () {
-    let size = slider.value;
-    blackboardSize(size);
-}
-
-
 // when clicked, clears the board of all colors and returns it to a white background
 clearButton.onclick = function () {
     for (let i = 0; i < colorClass.length; i++) {
-        colorClass[i].style.background = 'white';
+        colorClass[i].style.background = '#b6b4b4';
     }
 }
 
