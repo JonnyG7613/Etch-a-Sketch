@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const blackButton = document.getElementById('blackButton');
+// const blackButton = document.getElementById('blackButton');
 const randomButton = document.getElementById('randomButton');
 const clearButton = document.getElementById('clearButton');
 const $16 = document.getElementById('size16');
@@ -14,6 +14,7 @@ const grid = document.getElementsByClassName('grid');
 const colorClass = document.getElementsByClassName('colorClass');
 // const slideContainer = document.querySelector('.slideContainer');
 let span = document.createElement('span');
+const colorPicker = document.getElementById('colorpicker');
 
 // adjusts the size of the cells in the backboard
 function blackboardSize(xSize) {
@@ -56,9 +57,9 @@ clearButton.onclick = function () {
 }
 
 // sets the color of the Etch-a-Sketch to black
-blackButton.onclick = function () {
+colorPicker.onclick = function () {
     for (let i = 0; i < colorClass.length; i++) {
-        colorClass[i].addEventListener('mouseover', e => e.target.style.background = 'black');
+        colorClass[i].addEventListener('mouseover', e => e.target.style.background = colorPicker.value);
     }
 
 }

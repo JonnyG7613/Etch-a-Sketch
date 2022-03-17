@@ -2,6 +2,11 @@ body {
     background-color: rgba(34, 34, 34, 0.1);
 }
 
+@font-face {
+    font-family: Dancing;
+    src: url(./DancingScript-VariableFont_wght.ttf);
+}
+
 .button {
     font-size: 18px;
     font-weight: bold;
@@ -25,15 +30,19 @@ body {
 #header {
     color: rgb(228, 228, 102);
     text-align: center;
-    font-size: 48px;
+    font-size: 60px;
     font-weight:bolder;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Dancing;
     background-color: rgb(220, 0, 0);
     width: 760px;
     margin: auto;
     padding: 20px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+    box-shadow: 5px 5px #494949;
 }
 
 #footer {
@@ -57,6 +66,7 @@ body {
     margin: auto;
     overflow:hidden;
     display: inline-grid;
+    border: 1px solid black;
 }
 
 #plastic {
@@ -67,6 +77,10 @@ body {
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
     position: relative;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    box-shadow: 5px 5px #494949;
 }
 
 .colorClass {
@@ -88,10 +102,14 @@ body {
     right: 38px;
 }
 
-#blackButton {
+#colorpicker {
     position: absolute;
-    bottom: 30px;
-    left: 38px;
+    border-radius: 25%;
+    border: 5px solid black;
+    width: 75px;
+    height: 75px;
+    bottom: 25px;
+    left: 58px;
 }
 
 #randomButton {
